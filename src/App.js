@@ -1,7 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, themes } from "./theme";
-import { Checkbox } from "./components/Checkbox";
+import { THEME_TYPES } from "./theme/consts";
+import SwitchTheme from "./widgets/SwitchTheme";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -11,29 +12,28 @@ import styled from "styled-components";
 const Header = styled.header`
   background-color: ${({ theme }) => theme.headerBackgroundColor};
   padding: 1rem;
-  transition: all 100ms ease;
 `;
 
-// @TODO create switchTheme component
 function App() {
-  const [themeType, setTheme] = React.useState("light");
+  // get the themeType from the localStorage
+  const storedThemeType = localStorage.getItem("themeType");
+
+  const [themeType, setThemeType] = React.useState(
+    storedThemeType || THEME_TYPES.LIGHT
+  );
+
+  const setTheme = themeType => {
+    // store the themeType into the localStorage
+    localStorage.setItem("themeType", themeType);
+
+    setThemeType(themeType);
+  };
 
   return (
     <ThemeProvider theme={themes[themeType]}>
       <>
         <Header>
-          <h3>mode: {themeType}</h3>
-          <br />
-          <Checkbox
-            label="light"
-            checked={themeType === "light"}
-            onClick={() => setTheme("light")}
-          />
-          <Checkbox
-            label="dark"
-            checked={themeType === "dark"}
-            onClick={() => setTheme("dark")}
-          />
+          <SwitchTheme setTheme={setTheme} currentTheme={themeType} />
         </Header>
         <div className="App">
           <header className="App-header">

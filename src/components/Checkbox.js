@@ -11,7 +11,6 @@ const checkedStyle = css`2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px,
 
 const Label = styled.label`
   display: inline-block;
-  margin-bottom: 0.5rem;
 `;
 
 const Input = styled.input`
@@ -38,17 +37,22 @@ const Text = styled.span`
 `;
 
 // @TODO add proptypes and default theme
-export function Checkbox({ label, checked, onClick }) {
+export default function Checkbox({ label, checked, onChange }) {
   const [isChecked, setCheck] = React.useState(checked || false);
 
-  const toggle = () => {
-    onClick();
+  const toggle = e => {
+    onChange(e);
     setCheck(!isChecked);
   };
 
   return (
     <Label>
-      <Input type="checkbox" checked={isChecked} onClick={toggle} />
+      <Input
+        type="checkbox"
+        checked={isChecked}
+        onChange={toggle}
+        name={label}
+      />
       {label && <Text checked={checked}>{label}</Text>}
     </Label>
   );
