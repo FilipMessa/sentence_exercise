@@ -1,12 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, themes } from "./theme";
 import { THEME_TYPES } from "./theme/consts";
-import SwitchTheme from "./widgets/SwitchTheme";
-import logo from "./logo.svg";
-import "./App.css";
-
 import styled from "styled-components";
+import SwitchTheme from "./widgets/SwitchTheme";
+
+import Home from "./pages/index";
 
 // @TODO should be own component
 const Header = styled.header`
@@ -14,7 +14,16 @@ const Header = styled.header`
   padding: 1rem;
 `;
 
-function App() {
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
+
+// @TODO create context for theme
+export default function App() {
   // get the themeType from the localStorage
   const storedThemeType = localStorage.getItem("themeType");
 
@@ -35,26 +44,17 @@ function App() {
         <Header>
           <SwitchTheme setTheme={setTheme} currentTheme={themeType} />
         </Header>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
-        <GlobalStyle />
+        <Router>
+          <Route
+            path="/"
+            exact
+            component={() => <Home setTheme={setTheme} themeType={themeType} />}
+          />
+          <Route path="/about/" component={About} />
+          <Route path="/users/" component={Users} />
+          <GlobalStyle />
+        </Router>
       </>
     </ThemeProvider>
   );
 }
-
-export default App;
