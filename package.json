@@ -1,6 +1,9 @@
 {
   "name": "sentence_game",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "messa.filip@gmail.com",
+  "description": "The coding challenge solution.",
   "private": true,
   "dependencies": {
     "react": "^16.9.0",
