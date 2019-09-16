@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import CustomCursor from "../theme/CustomCursor";
 
 const uncheckedStyle = css`2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px, 16px 2px, 2px 4px, 16px 4px, 2px 6px, 16px 6px, 2px 8px, 16px 8px, 2px 10px, 16px 10px, 2px 12px, 16px 12px, 2px 14px, 16px 14px, 2px 16px, 4px 16px, 6px 16px, 8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;`;
 const checkedStyle = css`2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px,
@@ -11,6 +12,7 @@ const checkedStyle = css`2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px,
 
 const Label = styled.label`
   display: inline-block;
+  ${CustomCursor}
 `;
 
 const Input = styled.input`
