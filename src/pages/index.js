@@ -1,10 +1,9 @@
-import React from "react";
-import logo from "../logo.svg";
-import "../App.css";
+import React from 'react';
+import styled from 'styled-components';
+import logo from '../logo.svg';
+import '../App.css';
 
-import Text from '../components/Text'
-
-import styled from "styled-components";
+import Text from '../components/Text';
 
 // @TODO should be own component
 const Header = styled.header`
@@ -12,7 +11,7 @@ const Header = styled.header`
   padding: 1rem;
 `;
 
-function Home({ setTheme, themeType }) {
+function Home() {
   return (
     <div className="App">
       <Header className="App-header">
@@ -28,7 +27,7 @@ function Home({ setTheme, themeType }) {
         >
           Learn React
         </a>
-          <Text element="span"> kokoce </Text>
+        <Text element="span"> kokoce </Text>
       </Header>
     </div>
   );

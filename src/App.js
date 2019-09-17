@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle, themes } from "./theme";
-import { THEME_TYPES } from "./theme/consts";
-import styled from "styled-components";
-import SwitchTheme from "./widgets/SwitchTheme";
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyle, themes } from './theme';
+import { THEME_TYPES } from './theme/consts';
 
-import Home from "./pages/index";
+import SwitchTheme from './widgets/SwitchTheme';
+
+import Home from './pages/index';
 
 // @TODO should be own component
 const Header = styled.header`
@@ -25,17 +25,15 @@ function Users() {
 // @TODO create context for theme
 export default function App() {
   // get the themeType from the localStorage
-  const storedThemeType = localStorage.getItem("themeType");
+  const storedThemeType = localStorage.getItem('themeType');
 
-  const [themeType, setThemeType] = React.useState(
-    storedThemeType || THEME_TYPES.LIGHT
-  );
+  const [themeType, setThemeType] = React.useState(storedThemeType || THEME_TYPES.LIGHT);
 
-  const setTheme = themeType => {
+  const setTheme = type => {
     // store the themeType into the localStorage
-    localStorage.setItem("themeType", themeType);
+    localStorage.setItem('themeType', type);
 
-    setThemeType(themeType);
+    setThemeType(type);
   };
 
   return (

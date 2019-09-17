@@ -1,8 +1,12 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import CustomCursor from "../theme/CustomCursor";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import CustomCursor from '../theme/CustomCursor';
 
-const uncheckedStyle = css`2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px, 16px 2px, 2px 4px, 16px 4px, 2px 6px, 16px 6px, 2px 8px, 16px 8px, 2px 10px, 16px 10px, 2px 12px, 16px 12px, 2px 14px, 16px 14px, 2px 16px, 4px 16px, 6px 16px, 8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;`;
+const uncheckedStyle = css`2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px,
+16px 2px, 2px 4px, 16px 4px, 2px 6px, 16px 6px, 2px 8px, 16px 8px, 2px 10px, 16px 10px,
+2px 12px, 16px 12px, 2px 14px, 16px 14px, 2px 16px, 4px 16px, 6px 16px, 8px 16px, 10px 16px,
+12px 16px, 14px 16px, 16px 16px;`;
+
 const checkedStyle = css`2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px,
 18px 2px, 20px 2px, 2px 4px, 16px 4px, 18px 4px, 20px 4px, 2px 6px,
 14px 6px, 16px 6px, 2px 8px, 4px 8px, 12px 8px, 14px 8px, 2px 10px,
@@ -32,7 +36,7 @@ const Text = styled.span`
     left: -28px;
     width: 2px;
     height: 2px;
-    content: "";
+    content: '';
     color: ${({ theme }) => theme.defaultTextColor};
     box-shadow: ${({ checked }) => (checked ? checkedStyle : uncheckedStyle)};
   }
@@ -49,12 +53,7 @@ export default function Checkbox({ label, checked, onChange }) {
 
   return (
     <Label>
-      <Input
-        type="checkbox"
-        checked={isChecked}
-        onChange={toggle}
-        name={label}
-      />
+      <Input type="checkbox" checked={isChecked} onChange={toggle} name={label} />
       {label && <Text checked={checked}>{label}</Text>}
     </Label>
   );

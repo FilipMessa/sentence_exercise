@@ -1,16 +1,16 @@
-import { colorPalette } from "./palette";
-export { GlobalStyle } from "./GlobalStyle";
+import colorPalette from './palette';
 
+export { GlobalStyle } from './GlobalStyle';
 
 const fontSizes = {
   fontSizeSmall: '0.75em',
   fontSizeNormal: '1em',
   fontSizeLarge: '1.25em',
-}
+};
 
 const light = {
   primary: colorPalette.$color_27,
-  secondary: colorPalette.$color_21 ,
+  secondary: colorPalette.$color_21,
   defaultTextColor: colorPalette.$color_0F,
   headerBackgroundColor: colorPalette.$color_20,
   sectionBackgroundColor: colorPalette.$color_20,
@@ -30,8 +30,5 @@ const dark = {
 
 export const themes = {
   light,
-  dark
+  dark,
 };
-
-
-
