@@ -1,7 +1,8 @@
 import React from "react";
-import SwitchTheme from "../widgets/SwitchTheme";
 import logo from "../logo.svg";
 import "../App.css";
+
+import Text from '../components/Text'
 
 import styled from "styled-components";
 
@@ -16,9 +17,9 @@ function Home({ setTheme, themeType }) {
     <div className="App">
       <Header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <Text>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </Text>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -27,6 +28,7 @@ function Home({ setTheme, themeType }) {
         >
           Learn React
         </a>
+          <Text element="span"> kokoce </Text>
       </Header>
     </div>
   );
