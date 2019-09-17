@@ -5,6 +5,8 @@ import { GlobalStyle, themes } from './theme';
 import { THEME_TYPES } from './theme/consts';
 
 import SwitchTheme from './widgets/SwitchTheme';
+import Game from './pages/Game';
+import ResultsBoard from './pages/ResultsBoard';
 
 import Home from './pages/index';
 
@@ -13,14 +15,6 @@ const Header = styled.header`
   background-color: ${({ theme }) => theme.headerBackgroundColor};
   padding: 1rem;
 `;
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
 
 // @TODO create context for theme
 export default function App() {
@@ -48,8 +42,8 @@ export default function App() {
             exact
             component={() => <Home setTheme={setTheme} themeType={themeType} />}
           />
-          <Route path="/about/" component={About} />
-          <Route path="/users/" component={Users} />
+          <Route path="/game/" component={Game} />
+          <Route path="/results-board/" component={ResultsBoard} />
           <GlobalStyle />
         </Router>
       </>

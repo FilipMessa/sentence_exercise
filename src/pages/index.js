@@ -17,7 +17,11 @@ function Home() {
       <Header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Text>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit 
+          {' '}
+          <code>src/App.js</code>
+          {' '}
+and save to reload.
         </Text>
         <a
           className="App-link"
