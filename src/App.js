@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 import {  themes } from './theme';
 import  GlobalStyle  from './styles/GlobalStyle';
 import { THEME_TYPES } from './theme/consts';
@@ -32,22 +35,24 @@ export default function App() {
   };
 
   return (
-    <ThemeProvider theme={themes[themeType]}>
-      <>
-        <Header>
-          <SwitchTheme setTheme={setTheme} currentTheme={themeType} />
-        </Header>
-        <Router>
-          <Route
-            path="/"
-            exact
-            component={Home}
-          />
-          <Route path="/game/" component={Game} />
-          <Route path="/results-board/" component={ResultsBoard} />
-          <GlobalStyle />
-        </Router>
-      </>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={themes[themeType]}>
+        <>
+          <Header>
+            <SwitchTheme setTheme={setTheme} currentTheme={themeType} />
+          </Header>
+          <Router>
+            <Route
+              path="/"
+              exact
+              component={Home}
+            />
+            <Route path="/game/" component={Game} />
+            <Route path="/results-board/" component={ResultsBoard} />
+            <GlobalStyle />
+          </Router>
+        </>
+      </ThemeProvider>
+    </Provider>
   );
 }
