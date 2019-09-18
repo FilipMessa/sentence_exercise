@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 import logo from '../logo.svg';
 import '../App.css';
 
@@ -26,15 +27,7 @@ function Home() {
           </AnimatedText>
         </div>
         <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Text element="span"> kokoce </Text>
+        <Link to="/game">Start</Link>
       </Header>
     </div>
   );
