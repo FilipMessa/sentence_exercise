@@ -14,6 +14,8 @@ import ResultsBoard from './pages/ResultsBoard';
 
 import Home from './pages/index';
 
+import useLocalStorage from './utils/useLocalStorage'
+
 // @TODO should be own component
 const Header = styled.header`
   background-color: ${({ theme }) => theme.headerBackgroundColor};
@@ -22,24 +24,15 @@ const Header = styled.header`
 
 // @TODO create context for theme
 export default function App() {
-  // get the themeType from the localStorage
-  const storedThemeType = localStorage.getItem('themeType');
 
-  const [themeType, setThemeType] = React.useState(storedThemeType || THEME_TYPES.LIGHT);
-
-  const setTheme = type => {
-    // store the themeType into the localStorage
-    localStorage.setItem('themeType', type);
-
-    setThemeType(type);
-  };
+  const [themeType, setThemeType] = useLocalStorage('themeType', THEME_TYPES.LIGHT);
 
   return (
     <Provider store={store}>
       <ThemeProvider theme={themes[themeType]}>
         <>
           <Header>
-            <SwitchTheme setTheme={setTheme} currentTheme={themeType} />
+            <SwitchTheme setTheme={setThemeType} currentTheme={themeType} />
           </Header>
           <Router>
             <Route
