@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
-export default function useLocalStorage(
-  key , initialValue  = ''
-){
+export default function useLocalStorage(key, initialValue = "") {
   const [value, setValue] = React.useState(
     () => localStorage.getItem(key) || initialValue
   );
 
   React.useEffect(() => {
     localStorage.setItem(key, value);
-  }, [value]);
+  }, [key, value]);
 
   return [value, setValue];
 }

@@ -1,9 +1,20 @@
+// add question to initalState as a Constant
+
 const initialState = {
-    data: []
-  };
-  // TODO finish
-  // eslint-disable-next-line no-unused-vars
-  function rootReducer(state = initialState, action) {
-    return state;
-  };
-  export default rootReducer;
+  answers: []
+};
+
+function rootReducer(state = initialState, action) {
+  switch (action.type) {
+    case "ADD_ANSWER":
+      return {
+        answers: [...state.answers, action.answer]
+      };
+    case "RESET_STORE": {
+      return initialState;
+    }
+    default:
+      return state;
+  }
+}
+export default rootReducer;

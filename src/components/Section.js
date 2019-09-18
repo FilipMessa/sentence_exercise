@@ -5,6 +5,7 @@ import styled from "styled-components";
 // @TODO from props component type
 
 const SectionContainer = styled.section`
+  margin: 2rem;
   padding: 1.5rem 2rem;
   border-color: ${({ theme }) => theme.sectionBorderColor};
   border-style: solid;
