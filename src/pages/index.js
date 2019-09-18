@@ -4,6 +4,11 @@ import logo from '../logo.svg';
 import '../App.css';
 
 import Text from '../components/Text';
+import typewriterAnimation from '../styles/typewriterAnimation'
+
+const AnimatedText= styled(Text)`
+  ${typewriterAnimation}
+`
 
 // @TODO should be own component
 const Header = styled.header`
@@ -15,14 +20,12 @@ function Home() {
   return (
     <div className="App">
       <Header className="App-header">
+        <div>
+          <AnimatedText>
+            Welcome to Sentence Game!
+          </AnimatedText>
+        </div>
         <img src={logo} className="App-logo" alt="logo" />
-        <Text>
-          Edit 
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-and save to reload.
-        </Text>
         <a
           className="App-link"
           href="https://reactjs.org"

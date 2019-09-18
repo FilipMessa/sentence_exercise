@@ -1,7 +1,5 @@
 import colorPalette from './palette';
 
-export { GlobalStyle } from './GlobalStyle';
-
 const fontSizes = {
   fontSizeSmall: '0.75em',
   fontSizeNormal: '1em',

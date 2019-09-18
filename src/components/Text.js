@@ -23,9 +23,9 @@ const StyledText = styled(({ element: TextElement, ...props }) => <TextElement {
   color: ${getColor};
 `;
 
-export default function Text({ element = 'p', size = 'normal', children }) {
+export default function Text({ element = 'p', size = 'normal', children, className }) {
   return (
-    <StyledText size={size} element={element}>
+    <StyledText size={size} element={element} className={className}>
       {children}
     </StyledText>
   );

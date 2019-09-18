@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyle, themes } from './theme';
+import {  themes } from './theme';
+import  GlobalStyle  from './styles/GlobalStyle';
 import { THEME_TYPES } from './theme/consts';
 
 import SwitchTheme from './widgets/SwitchTheme';
@@ -40,7 +41,7 @@ export default function App() {
           <Route
             path="/"
             exact
-            component={() => <Home setTheme={setTheme} themeType={themeType} />}
+            component={Home}
           />
           <Route path="/game/" component={Game} />
           <Route path="/results-board/" component={ResultsBoard} />

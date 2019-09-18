@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 ${reset}
 body {
@@ -11,3 +11,5 @@ body {
     color: ${({ theme }) => theme.defaultTextColor}
   }
 `;
+
+export default GlobalStyle;
