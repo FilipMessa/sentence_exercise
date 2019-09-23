@@ -1,12 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
-import useInput from "../utils/useInput";
-import InputField from "../components/InputField";
-
 import { connect } from "react-redux";
+
+import useInput from "../utils/useInput";
 import { addNewAnswer } from "../redux/actions";
 
+import InputField from "../components/InputField";
 import Star from "../components/Star";
 import Button from "../components/Button";
 import Container from "../components/Container";
