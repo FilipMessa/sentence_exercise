@@ -1,4 +1,4 @@
-// add question to initalState as a Constant
+import * as types from "./ActionTypes";
 
 const initialState = {
   answers: []
@@ -6,11 +6,11 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_ANSWER":
+    case types.ADD_ANSWER:
       return {
         answers: [...state.answers, action.answer]
       };
-    case "RESET_STORE": {
+    case types.RESET_STORE: {
       return initialState;
     }
     default:
