@@ -31,7 +31,7 @@ const NextButton = styled(Button)`
   margin: 20px;
 `;
 
-function Game(props) {
+export function Game(props) {
   const inputState = useInput("");
   const [isValid, setValidity] = React.useState(true);
   const currentIndex = props.answers.length;

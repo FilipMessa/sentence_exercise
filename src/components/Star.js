@@ -36,11 +36,10 @@ const Img = styled.img`
   width: ${getStartSize};
 `;
 
-// TODO alt and other shit ans size
 export default function Start({ message = "", size = "normal", warning }) {
   return (
     <Container>
-      <Img src={starImg} size={size} />
+      <Img alt="mascotte" src={starImg} size={size} />
       <BubbleMessage align="left">
         <AnimatedMessage warning={warning}>{message}</AnimatedMessage>
       </BubbleMessage>

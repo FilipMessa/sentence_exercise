@@ -42,7 +42,6 @@ const Text = styled.span`
   }
 `;
 
-// @TODO add proptypes and default theme
 export default function Checkbox({ label, checked, onChange }) {
   const [isChecked, setCheck] = React.useState(checked || false);
 
