@@ -21,14 +21,12 @@ const Header = styled.header`
   background-color: ${({ theme }) => theme.headerBackgroundColor};
 `;
 
-// @TODO create context for theme
 export default function App() {
   const [themeType, setThemeType] = useLocalStorage(
     "themeType",
     THEME_TYPES.LIGHT
   );
 
-  // @TODO add 404 screen
   return (
     <Router>
       <Provider store={store}>

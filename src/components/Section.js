@@ -2,9 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-// @TODO all color should came from theme
-// @TODO from props component type
-
 const SectionContainer = styled.section`
   margin: 2rem;
   padding: 1.5rem 2rem;
