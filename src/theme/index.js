@@ -24,9 +24,9 @@ const commonTokens = {
 const light = {
   name: "light",
   ...commonTokens,
-  defaultBackgroundColor: "white",
+  defaultBackgroundColor: colorPalette.$color_white,
   primary: colorPalette.$color_27,
-  secondary: colorPalette.$color_21,
+  secondary: colorPalette.$color_0A,
   defaultTextColor: colorPalette.$color_0F,
   headerBackgroundColor: colorPalette.$color_20,
   sectionBackgroundColor: colorPalette.$color_20,
@@ -38,9 +38,9 @@ const light = {
 const dark = {
   name: "dark",
   ...commonTokens,
-  defaultBackgroundColor: "black",
+  defaultBackgroundColor: colorPalette.$color_0D,
   primary: colorPalette.$color_03,
-  secondary: colorPalette.$color_0A,
+  secondary: colorPalette.$color_1B,
   defaultTextColor: colorPalette.$color_20,
   headerBackgroundColor: colorPalette.$color_0F,
   sectionBackgroundColor: colorPalette.$color_0F,

@@ -2,11 +2,20 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
+import { resetStore } from "../redux/actions";
+
 import Star from "../components/Star";
 import Button from "../components/Button";
 import Container from "../components/Container";
 
-function ResultsBoard({ location, history, answers }) {
+function ResultsBoard({ location, history, answers, resetStore }) {
+  React.useEffect(() => {
+    return () => {
+      resetStore();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleClick = () => {
     history.push("/");
   };
@@ -19,13 +28,18 @@ function ResultsBoard({ location, history, answers }) {
   return (
     <Container>
       <Star size="large" message={getMessage(answers)} />
-      <Button type="button" onClick={handleClick}>
+      <Button type="link" onClick={handleClick}>
         New Game
       </Button>
     </Container>
   );
 }
 
-export default connect(({ answers }) => ({ answers }))(
-  withRouter(ResultsBoard)
-);
+const mapDispatchToProps = dispatch => ({
+  resetStore: answer => dispatch(resetStore(answer))
+});
+
+export default connect(
+  ({ answers }) => ({ answers }),
+  mapDispatchToProps
+)(withRouter(ResultsBoard));

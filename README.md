@@ -48,7 +48,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 - improve the unit tests
 - improve designs
-- move more styles values into the theme
+- move more styles values into the theme (all colors)
 - add [Cypress.io](https://www.cypress.io/)
 - add storybook
 - add more fun features
