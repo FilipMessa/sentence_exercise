@@ -48,6 +48,7 @@ export default function InputField({
     <Container>
       <Label>{label}</Label>
       <Input
+        aria-label={`Quiz questions: ${label}`}
         ref={inputRef}
         focused
         invalid={invalid}
