@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CustomCursor from "../styles/CustomCursor";
 import border from "../assets/border.svg";
 import invalidBorder from "../assets/border-red.svg";
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   ${CustomCursor}
@@ -59,3 +60,11 @@ export default function InputField({
     </Container>
   );
 }
+
+InputField.prototype = {
+  onChange: PropTypes.func.isRequired,
+  onKeyDown: PropTypes.func,
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  invalid: PropTypes.bool
+};

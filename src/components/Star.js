@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import starImg from "../assets/star.png";
-
 import Bubble from "./Bubble";
 import AnimatedText from "./AnimatedText";
 
@@ -36,13 +36,21 @@ const Img = styled.img`
   width: ${getStartSize};
 `;
 
-export default function Start({ message = "", size = "normal", warning }) {
+export default function Star({ message = "", size = "normal", warning }) {
   return (
     <Container>
       <Img alt="mascotte" src={starImg} size={size} />
-      <BubbleMessage align="left">
-        <AnimatedMessage warning={warning}>{message}</AnimatedMessage>
-      </BubbleMessage>
+      {message && (
+        <BubbleMessage align="left">
+          <AnimatedMessage warning={warning}>{message}</AnimatedMessage>
+        </BubbleMessage>
+      )}
     </Container>
   );
 }
+
+Star.prototype = {
+  warning: PropTypes.bool,
+  message: PropTypes.string,
+  size: PropTypes.oneOf(["small", "normal", "large"])
+};

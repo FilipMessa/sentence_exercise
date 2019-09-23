@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import bubbleBorder from "../assets/bubble-border.svg";
 import bubbleBorderGray from "../assets/bubble-border-gray.svg";
+import PropTypes from "prop-types";
 
 import { THEME_TYPES } from "../theme/consts";
 
@@ -100,3 +101,9 @@ export default function Bubble({ children, align = "left", className }) {
     </Container>
   );
 }
+
+Bubble.prototype = {
+  children: PropTypes.node.isRequired,
+  align: PropTypes.oneOf(["left", "right"]),
+  className: PropTypes.string
+};

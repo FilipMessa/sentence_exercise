@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import CustomCursor from "../styles/CustomCursor";
 import buttonBorder from "../assets/button-border.svg";
+import PropTypes from "prop-types";
 
-// height todo
 const Button = styled.button`
   ${CustomCursor}
   font: inherit;
@@ -28,5 +28,11 @@ const Button = styled.button`
     font-size: 0.8rem;
   }
 `;
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onKeyDown: PropTypes.func
+};
 
 export default Button;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const getFontSize = ({ theme, size }) => {
   const sizeTokens = {
@@ -38,3 +39,10 @@ export default function Text({
     </StyledText>
   );
 }
+
+Text.prototype = {
+  children: PropTypes.element.isRequired,
+  size: PropTypes.oneOf(["small", "normal", "large"]),
+  element: PropTypes.elementType,
+  className: PropTypes.string
+};

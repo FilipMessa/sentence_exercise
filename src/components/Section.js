@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 // @TODO all color should came from theme
 // @TODO from props component type
@@ -31,3 +32,9 @@ export default function Section({ label, children, element }) {
     </SectionContainer>
   );
 }
+
+Section.prototype = {
+  children: PropTypes.element.isRequired,
+  label: PropTypes.string,
+  element: PropTypes.elementType
+};
